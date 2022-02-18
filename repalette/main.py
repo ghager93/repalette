@@ -55,7 +55,7 @@ def get_palette(image: np.ndarray, n_colours: int = 4):
 
     image_flat = image.reshape(-1, 3)
 
-    # GMM is fitted with a sample of 1000 pixels improve speed.
+    # GMM is fitted with a sample of 1000 pixels to improve speed.
     image_sample = image_flat[default_rng().choice(image_flat.shape[0], 1000, replace=False)]
 
     gmm = mixture.GaussianMixture(n_components=n_colours)
